@@ -1,0 +1,784 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #333;
+}
+/* Header Styling */
+.sticky-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #000; /* Dark theme like TCS */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.logo img {
+    height: 80px;               
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+    color: #ff9800; /* Highlight on hover */
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-btn {
+    background: #ff9800;
+    padding: 8px 15px;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-btn:hover {
+    background: #e68900;
+}
+
+.search-icon {
+    width: 24px;
+    cursor: pointer;
+}
+
+/* Hero Slider Section */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-container {
+    display: flex;
+    width: 300%; /* 3 slides */
+    transition: transform 0.5s ease-in-out;
+    overflow: hidden;  /* ✅ FIXED */
+}
+
+.hero-slide {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.hero-text {
+    color: white;
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-text .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #ff9800;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.hero-text .btn:hover {
+    background: #e68900;
+}
+
+/* Slider Navigation */
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-controls button {
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.slider-controls button:hover {
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+    .hero-text .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+.hero-gif {
+    width: 120px;
+    height: auto;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.legal-sphere, .tax-sphere {
+    padding: 100px 10%;
+    text-align: center;
+    background: linear-gradient(135deg, #001f3f, #003366);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.legal-sphere h2, .tax-sphere h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.legal-grid, .tax-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.legal-card, .tax-card {
+    background: linear-gradient(135deg, #ffffff, #f8f8f8);
+    padding: 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    animation: fadeInUp 1s ease-in-out;
+    overflow: hidden;
+}
+
+.legal-card::before, .tax-card::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(45deg);
+    transition: 0.5s ease-in-out;
+}
+
+.legal-card:hover::before, .tax-card:hover::before {
+    top: 100px;
+    left: 100px;
+}
+
+.legal-card:hover, .tax-card:hover {
+    transform: translateY(-12px) scale(1.08);
+    box-shadow: 0px 18px 40px rgba(0, 0, 0, 0.5);
+}
+
+.legal-card img, .tax-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.legal-card:hover img, .tax-card:hover img {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.legal-card h3, .tax-card h3 {
+    font-size: 2.2rem;
+    color: #001f3f;
+    font-weight: bold;
+}
+
+.legal-card p, .tax-card p {
+    font-size: 1.3rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.legal-card .btn, .tax-card .btn {
+    display: inline-block;
+    background: #ff9800;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 1.1rem;
+}
+
+.legal-card .btn:hover, .tax-card .btn:hover {
+    background: #e68900;
+    transform: scale(1.1);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .legal-grid, .tax-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .legal-sphere h2, .tax-sphere h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* About Section Layout */
+#about-section {
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    padding: 60px 20px;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.about-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 360px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-box:hover {
+    transform: translateY(-8px);
+}
+
+/* Headings */
+.about-box h2 {
+    font-size: 1.8em;
+    color: #003366;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.about-box h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #ff6600;
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+/* Paragraphs */
+.about-box p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* List Items */
+.about-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-box ul li {
+    font-size: 1.1em;
+    color: #444;
+    background: #f4f4f4;
+    padding: 10px 15px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+    transition: background 0.3s;
+}
+
+.about-box ul li:hover {
+    background: #ff6600;
+    color: #fff;
+}
+
+/* Icons */
+.about-box i {
+    font-size: 1.3em;
+    color: #ff6600;
+    transition: color 0.3s ease-in-out;
+}
+
+.about-box ul li:hover i {
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+ .contact {
+    padding: 80px 10%;
+    background: linear-gradient(135deg, #ffffff, #f2f2f2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.contact-info {
+    width: 40%;
+}
+
+.contact-info h2 {
+    font-size: 2.8rem;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.contact-info .info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.contact-info .info-item i {
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.contact-form {
+    width: 50%;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    transition: border 0.3s ease;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.contact-form button {
+    padding: 12px 20px;
+    background: #007bff;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 5%;
+    }
+
+    .contact-info, .contact-form {
+        width: 100%;
+    }
+}
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.floating-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.floating-buttons a i {
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+}
+
+.floating-buttons a:hover {
+    background: linear-gradient(135deg, #0056b3, #004494);
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.floating-buttons a:hover i {
+    transform: scale(1.2);
+}
+
+/* Floating Button Animation */
+.floating-buttons a::before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: rgba(255, 255, 255, 0.2);
+    top: -50%;
+    left: -50%;
+    transform: rotate(30deg);
+    transition: 0.5s ease-in-out;
+    border-radius: 50%;
+}
+
+.floating-buttons a:hover::before {
+    top: 100%;
+    left: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .floating-buttons {
+        right: 10px;
+        bottom: 10px;
+    }
+    .floating-buttons a {
+        width: 50px;
+        height: 50px;
+    }
+    .floating-buttons a i {
+        font-size: 1.5rem;
+    }
+}
+
+/* Services Section Styled Like Legal Sphere */
+.services {
+    padding: 100px 10%;
+    text-align: center;
+    background: linear-gradient(135deg, #001f3f, #003366);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.services h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.slider {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.service-card {
+    min-width: 320px;
+    padding: 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    animation: fadeInUp 1s ease-in-out;
+    overflow: hidden;
+}
+
+/* Alternate Background Colors for Service Cards - Professional Look */
+.service-card:nth-child(odd) {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+}
+
+.service-card:nth-child(even) {
+    background: linear-gradient(135deg, #6D7680, #525C67);
+    color: white;
+}
+
+.service-card:hover {
+    transform: translateY(-12px) scale(1.08);
+    box-shadow: 0px 18px 40px rgba(0, 0, 0, 0.5);
+}
+
+.service-card img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover img {
+    transform: rotate(5deg) scale(1.1);
+}
+
+.service-card h3 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.service-card p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Slider Navigation */
+.slider-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-buttons button {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.slider-buttons button:hover {
+    transform: scale(1.1);
+}
+
+/* Keywords Section */
+.services-keywords {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.services-keywords span {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slider {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+    }
+
+    .service-card {
+        scroll-snap-align: center;
+    }
+
+    .services h2 {
+        font-size: 2.5rem;
+    }
